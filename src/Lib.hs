@@ -62,10 +62,6 @@ isIchidan str = last str == 'る' &&
                 (getLastVowelSound $ init str) == 'い' ||
                 (getLastVowelSound $ init str) == 'え'
 
--- | TODO BEGIN irregular functions
-politeIrregular :: String -> String
-politeIrregular = id
-
 dictionaryNegativeImperativeIrregular :: String -> String
 dictionaryNegativeImperativeIrregular = id
 
@@ -73,7 +69,7 @@ dictionaryNegativeImperativeIrregular = id
 
 politeForm :: String -> String
 politeForm str
-  | isIrregular str = politeIrregular str
+  -- | isIrregular str = politeIrregular str
   | isIchidan   str = init str ++ "ます"
   | otherwise       = init str ++ [(modifyVowelSound (last str) 'i')] ++ "ます"
 
