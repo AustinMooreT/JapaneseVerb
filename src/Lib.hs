@@ -1,6 +1,7 @@
-module Lib
-    ( someFunc
-    ) where
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE RankNTypes #-}
+
+module Lib  where
 
 --TODO/NOTE very little error checking is happening in this program.
 
@@ -76,8 +77,8 @@ politeForm str
   | isIchidan   str = init str ++ "ます"
   | otherwise       = init str ++ [(modifyVowelSound (last str) 'i')] ++ "ます"
 
-dictionaryNegativeImperative :: String -> String
-dictionaryNegativeImperative str
-  | isIrregular str = dictionaryNegativeImperativeIrregular str
-  | isIchidan   str = init str ++ "な"-
-im-  | otherwise
+--dictionaryNegativeImperative :: String -> String
+--dictionaryNegativeImperative str
+--  | isIrregular str = dictionaryNegativeImperativeIrregular str
+--  | isIchidan   str = init str ++ "な"-
+--  | otherwise
